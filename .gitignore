@@ -1,17 +1,17 @@
 __pycache__/
 
 dataset/*.png
-!dataset/
+!dataset/*
 
 *.iml
 .idea/
 target/
 
 checkpoint/**/*.tar
-!checkpoint/*/
+!checkpoint/*
 
 result/**/*.txt
-!result/*/
+!result/*
 
 inference/
 
