@@ -1,1 +1,2 @@
-./dataset/0_M0003_2019_P0000004_circle_2.0x2.0_C06_S006_5.png	0	P0000004
+./dataset/0_P1.png	0	P1
+./dataset/0_P2.png	0	P2
