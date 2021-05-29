@@ -61,18 +61,6 @@ The `train.py` file defines all parameters and mode for each experiment.
 ***dataset***: `contains the whole dataset samples.`  
 ***figures***: `stores all figures displayed in our paper.`  
 ***result***: `same as checkpoint directory. stores the training results in .txt files.`  
-&emsp;***fine_tune***  
-&emsp;&emsp;***lbp_resnet101***  
-&emsp;&emsp;***resnet101***  
-&emsp;&emsp;***resnet50***  
-&emsp;***self_supervised***  
-&emsp;&emsp;***lbp_resnet101***  
-&emsp;&emsp;***resnet101***  
-&emsp;&emsp;***resnet50***  
-&emsp;***supervised***  
-&emsp;&emsp;***resnet101***  
-&emsp;&emsp;***resnet50***  
-&emsp;&emsp;***vgg19***  
 ***create_list.py***: `create data list from ./dataset. split data into different .txt files.`  
 ***data_reader.py***: `data loader class.`  
 ***model.py***: `define model structure for vgg and resnet family.`  
