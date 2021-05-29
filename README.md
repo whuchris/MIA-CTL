@@ -6,7 +6,7 @@ We proposed a novel self-supervised learning using TCL for cervical OCT image cl
 The picture below demonstrates an overview of the proposed TCL framwork. The pretext task part uses texture contrast learning to extract feature maps from the texture features of the input images, and the downstream part linear classification is used to fine-tune the network Conv network.  
 <img src="https://github.com/ChrisNieo/MIA-TCL/blob/main/figures/Figure_2%20Framework.png" width="800"/><br/>
 ## Experiment Results
-Our training step results are shown in the picture below. This pictures mainly demonstrates both the efficiency an accuracy of our proposed method.  
+Our training step results are shown in the picture below. This pictures mainly demonstrates both the efficiency and accuracy of our proposed method.  
 <img src="https://github.com/ChrisNieo/MIA-TCL/blob/main/figures/Figure_4%20acc_curve.png" width="600"/><br/> 
 Compared to four human experts, the performance of our model is better. And the picture below displays the confusion matrices for both the five-classed and binary classification task.  
 <img src="https://github.com/ChrisNieo/MIA-TCL/blob/main/figures/Figure_5%20cfu_human%26net.png" width="800"/><br/>
