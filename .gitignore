@@ -1,17 +1,23 @@
 __pycache__/
 
 dataset/*.png
-!dataset/*
+!dataset/0_M0003_2019_P0000001_circle_2.0x2.0_C06_S006_0.png
 
 *.iml
 .idea/
 target/
 
 checkpoint/**/*.tar
-!checkpoint/*
+!checkpoint/**/lbp_resnet101/
+!checkpoint/**/resnet101/
+!checkpoint/**/resnet50/
+!checkpoint/**/vgg19/
 
 result/**/*.txt
-!result/*
+!result/**/lbp_resnet101/
+!result/**/resnet101/
+!result/**/resnet50/
+!result/**/vgg19/
 
 inference/
 
