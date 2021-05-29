@@ -2,6 +2,7 @@ __pycache__/
 
 dataset/*.png
 !dataset/0_M0003_2019_P0000001_circle_2.0x2.0_C06_S006_0.png
+!dataset/0_M0003_2019_P0000001_circle_2.0x2.0_C06_S006_1.png
 
 *.iml
 .idea/
