@@ -73,7 +73,7 @@ The `train.py` file defines all parameters and mode for each experiment.
 &emsp;&emsp;***resnet101***  
 &emsp;&emsp;***resnet50***  
 &emsp;&emsp;***vgg19***  
-***create_list.py***: `create data list from ./dataset. split data into ssl_trian/supervised_train/train/test/validation.`  
+***create_list.py***: `create data list from ./dataset. split data into self_supervised_trian/supervised_train/train/test/validation.`  
 ***data_reader.py***: `data loader class.`  
 ***model.py***: `define model structure for vgg and resnet family.`  
 ***train.py***: `training step.`  
