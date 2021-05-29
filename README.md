@@ -66,6 +66,6 @@ The `train.py` file defines all parameters and mode for each experiment.
 ***model.py***: `define model structure for vgg and resnet family.`  
 ***train.py***: `training step.`  
 ***util.py***:  `uitlization function and class such as ImageProcessor.`  
-***requirement.txt***:  `record all dependencies and versions.` 
+***requirements.txt***:  `record all dependencies and versions.` 
 ## Contact us
 If you have any issues, contact us at email address kaiyi@whu.edu.cn or leave a message under [`Issues`](https://github.com/ChrisYiyi/MIA-TCL/issues) module!
