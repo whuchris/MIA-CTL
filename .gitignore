@@ -1,0 +1,9 @@
+__pycache__/
+dataset/*.png
+*.iml
+.idea/
+target/
+checkpoint/**/*.tar
+result/**/*.txt
+inference/
+data_folder/*.txt
