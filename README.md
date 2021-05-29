@@ -5,7 +5,7 @@ This repository contains all our materials except the whole dataset of our paper
 We proposed a novel self-supervised learning using TCL for cervical OCT image classification. we use CNNs which can be implemented by various architectures, such as VGG, standard ResNet family, etc.  
 The picture below demonstrates an overview of the proposed TCL framwork. The pretext task part uses texture contrast learning to extract feature maps from the texture features of the input images, and the downstream part linear classification is used to fine-tune the network Conv network.  
 <img src="https://github.com/ChrisNieo/MIA-TCL/blob/main/figures/Figure_2%20Framework.png" width="800"/><br/>
-## Experiment Result
+## Experiment Results
 Our training step results are shown in the picture below. This pictures mainly demonstrates both the efficiency an accuracy of our proposed method.  
 <img src="https://github.com/ChrisNieo/MIA-TCL/blob/main/figures/Figure_4%20acc_curve.png" width="600"/><br/> 
 Compared to four human experts, the performance of our model is better. And the picture below displays the confusion matrices for both the five-classed and binary classification task.  
@@ -20,7 +20,29 @@ Stll, you can make your own dataset if possible through the following steps.
 * Find the best P and R for your own dataset when call function *local_binary_pattern(LBP)* if you want to use TCL to boost model performance.  
 * Call function *split_ssl_and_sl()* from `create_list.py` to generate a `self_supervised_list_folder.txt` file for self-supervised training and a `supervised_folder.txt` file for 10-fold cross validation experiment. Call function *generate_folder()* from `create_list.py` to generate `10_folder.txt` files for fine-tuning or training from scratch.
 ## Module envirment
-The `requirement.txt` file records all dependencies and versions our work needs. Make sure your python version is 3.6.12 and to install all  dependencies at once, run `pip install -r requirements.txt`.
+The `requirement.txt` file records all dependencies and versions our work needs. Make sure your python version is 3.6.12 and to install all  dependencies at once, run `pip install -r requirements.txt`.  
+## Runing
+The `train.py` file defines all parameters and mode for each experiment.  
+* Run self-supervised learning based on ResNet101 with TCL by:  
+`python train.py --model_name 'lbp_resnet101' --epoch 150 --train_mode 'self_supervised' --use_lbp --lr 1e-2 --weight_decay 1e-6 --init --pre_train`
+* Run self-supervised learning based on ResNet101 with SimCLR by:  
+`python train.py --model_name 'resnet101' --epoch 150 --train_mode 'self_supervised' --lr 1e-2 --weight_decay 1e-6 --init --pre_train`
+* Run self-supervised learning based on ResNet50 with SimCLR by:  
+`python train.py --model_name 'resnet50' --epoch 150 --train_mode 'self_supervised' --lr 1e-2 --weight_decay 1e-6 --init --pre_train`
+* Run supervised learning based on ResNet101 by:  
+`python train.py --model_name 'resnet101' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`
+* Run supervised learning based on ResNet50 by:  
+`python train.py --model_name 'resnet50' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`
+* Run supervised learning based on VGG19 by:  
+`python train.py --model_name 'VGG19' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`
+* Fine-tune ResNet101 with TCL by:  
+`python train.py --model_name 'lbp_resnet101' --epoch 40 --train_mode 'fine_tune' --use_lbp --lr 5e-3 --pre_load`
+* Fine-tune ResNet101 with SimCLR by:  
+`python train.py --model_name 'resnet101' --epoch 40 --train_mode 'fine_tune' --use_lbp --lr 5e-3 --pre_load`
+* Fine-tune ResNet50 with SimCLR by:  
+`python train.py --model_name 'resnet50' --epoch 40 --train_mode 'fine_tune' --use_lbp --lr 5e-3 --pre_load`  
+* Make sure you have prepared your data and install all dependencies before running your experiments.
+* You can change the superparameters such as `lr(learning rate)`,`weight_decay`, etc and you can change the model if necessary.
 ## Repository description
 ### Description of each directory and file.  
 ***checkpoint***: `stores checkpoints for different train_mode when training on epoch.`    
