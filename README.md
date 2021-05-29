@@ -8,17 +8,17 @@ The picture below demonstrates an overview of the proposed TCL framwork. The pre
 ## Experiment Results
 Our training step results are shown in the picture below. This pictures mainly demonstrates both the efficiency and accuracy of our proposed method.  
 <img src="https://github.com/ChrisNieo/MIA-TCL/blob/main/figures/Figure_4%20acc_curve.png" width="600"/><br/> 
-Compared to four human experts, the performance of our model is better. And the picture below displays the confusion matrices for both the five-classed and binary classification task.  
+Compared to four human experts, the performance of our model is better. And the picture below displays the confusion matrices for both the five-classes and binary classification task.  
 <img src="https://github.com/ChrisNieo/MIA-TCL/blob/main/figures/Figure_5%20cfu_human%26net.png" width="800"/><br/>
 Our paper gives more information about the performance of our proposed method. We give a result for an external validation samples which denotes that great generalization of our model. And we also give a visualization result of our model which denotes a better interpretability of our model.  
 ## Data preperation
 By default. The `./dataset` directory stores our dataset. But we are sorry that our dataset cannot be made public due to the confidentiality agreement. You can get more information about our dataset by [`reading this paper`](https://www.researchgate.net/publication/341467052_Multi-center_Clinical_Study_Using_Optical_Coherence_Tomography_for_Evaluation_of_Cervical_Lesions_In-vivo).  
 Stll, you can make your own dataset if possible through the following steps.  
 * Put all you dataset samples in directory `./dataset`. Keep sure that ***the label and patient name(if exists) are able to be obtained from the sample file name.***
-* Call function *generate_datatxt()* from `create_list.py` to generate a `data.txt` file in `./data_folder` directory. Modify the code in `create_list.py` if necessary. Keep sure that each line in `data.txt` is like '**[file_directory&emsp;label&emsp;patient_name(if exists)]**', where the spaces represent tabs('\t') with a newline('\n') in the end.  
+* Execute method *generate_datatxt()* from `create_list.py` to generate a `data.txt` file in `./data_folder` directory. Modify the code in `create_list.py` if necessary. Keep sure that each line in `data.txt` is like '**[file_directory&emsp;label&emsp;patient_name(if exists)]**', where the spaces represent tabs('\t') with a newline('\n') in the end.  
 *Example*:  `./dataset/0_M0003_2019_P0000004_circle_2.0x2.0_C06_S006_5.png  0 P0000004`.  
-* Find the best P and R for your own dataset when call function *local_binary_pattern(LBP)* if you want to use TCL to boost model performance.  
-* Call function *split_ssl_and_sl()* from `create_list.py` to generate a `self_supervised_list_folder.txt` file for self-supervised training and a `supervised_folder.txt` file for 10-fold cross validation experiment. Call function *generate_folder()* from `create_list.py` to generate `10_folder.txt` files for fine-tuning or training from scratch.
+* Find the best P and R for your own dataset when execute method *local_binary_pattern()(LBP)* if you want to use TCL to boost model performance.  
+* Execute method *split_ssl_and_sl()* from `create_list.py` to generate a `self_supervised_list_folder.txt` file for self-supervised training and a `supervised_folder.txt` file for 10-fold cross validation experiment. Execute method *generate_folder()* from `create_list.py` to generate `10_folder.txt` files for fine-tuning or training from scratch.
 ## Module envirment
 The `requirement.txt` file records all dependencies and versions our work needs. Make sure your python version is 3.6.12 and to install all  dependencies at once, run `pip install -r requirements.txt`.  
 ## Runing
@@ -80,4 +80,4 @@ The `train.py` file defines all parameters and mode for each experiment.
 ***util.py***:  `uitlization function and class such as ImageProcessor.`  
 ***requirement.txt***:  `record all dependencies and versions.` 
 ## Contact us
-If you have any issues, contact us at email address kaiyi@whu.edu.cn or leave a message under `Issues` module!
+If you have any issues, contact us at email address kaiyi@whu.edu.cn or leave a message under [`Issues`](https://github.com/ChrisYiyi/MIA-TCL/issues) module!
