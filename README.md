@@ -43,8 +43,7 @@ The `train.py` file defines all parameters and mode for each experiment.
 `python train.py --model_name 'resnet50' --epoch 40 --train_mode 'fine_tune' --use_lbp --lr 5e-3 --pre_load`  
 * Make sure you have prepared your data and install all dependencies before running your experiments.
 * You can change the superparameters such as `lr(learning rate)`,`weight_decay`, etc and you can define and change the models based on CNNs if necessary.
-## Repository description
-### Description of each directory and file.  
+## Repository description  
 ***checkpoint***: `stores checkpoints for different train_mode when training on epoch.`    
 &emsp;***fine_tune***: `stores checkpoints for different model on fine-tuning after self-supervised training.`  
 &emsp;&emsp;***lbp_resnet101***: `stores state of resnet-101 using TCL on fine-tuning.`   
@@ -80,3 +79,5 @@ The `train.py` file defines all parameters and mode for each experiment.
 ***train.py***: `training step.`  
 ***util.py***:  `uitlization function and class such as ImageProcessor.`  
 ***requirement.txt***:  `record all dependencies and versions.` 
+## Contact us
+If you have any issues, contact us at email address kaiyi@whu.edu.cn or leave a message under `Issues` module!
