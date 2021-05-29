@@ -42,7 +42,7 @@ The `train.py` file defines all parameters and mode for each experiment.
 * Fine-tune ResNet50 with SimCLR by:  
 `python train.py --model_name 'resnet50' --epoch 40 --train_mode 'fine_tune' --use_lbp --lr 5e-3 --pre_load`  
 * Make sure you have prepared your data and install all dependencies before running your experiments.
-* You can change the superparameters such as `lr(learning rate)`,`weight_decay`, etc and you can change the model if necessary.
+* You can change the superparameters such as `lr(learning rate)`,`weight_decay`, etc and you can define and change the models based on CNNs if necessary.
 ## Repository description
 ### Description of each directory and file.  
 ***checkpoint***: `stores checkpoints for different train_mode when training on epoch.`    
