@@ -9,16 +9,8 @@ dataset/*.png
 target/
 
 checkpoint/**/*.tar
-!checkpoint/**/lbp_resnet101/
-!checkpoint/**/resnet101/
-!checkpoint/**/resnet50/
-!checkpoint/**/vgg19/
 
 result/**/*.txt
-!result/**/lbp_resnet101/
-!result/**/resnet101/
-!result/**/resnet50/
-!result/**/vgg19/
 
 inference/
 
