@@ -9,19 +9,19 @@ The picture below demonstrates an overview of the proposed TCL framwork. The pre
 
 ## Repository description
 ### Description of each directory and file.  
-**checkpoint**: stores checkpoints for different train_mode when training on epoch.    
-&emsp;**fine_tune**: stores checkpoints for different model while fine-tuning after self-supervised training.  
+**checkpoint**:                stores checkpoints for different train_mode when training on epoch.    
+&emsp;**fine_tune**:           stores checkpoints for different model on fine-tuning after self-supervised training.  
 &emsp;&emsp;**lbp_resnet101**: stores state of resnet-101 using TCL on fine-tuning.   
-&emsp;&emsp;**resnet101**: stores state of resnet-101 using SimCLR on fine-tuning.  
-&emsp;&emsp;**resnet50**: stores state of resnet-50 using SimCLR on fine-tuning.  
-&emsp;**self_supervised**: stores checkpoints for different model on self-supervised training.  
-&emsp;&emsp;lbp_resnet101  
-&emsp;&emsp;resnet101  
-&emsp;&emsp;resnet50  
-&emsp;supervised  
-&emsp;&emsp;resnet101  
-&emsp;&emsp;resnet50  
-&emsp;&emsp;vgg19  
+&emsp;&emsp;**resnet101**:     stores state of resnet-101 using SimCLR on fine-tuning.  
+&emsp;&emsp;**resnet50**:      stores state of resnet-50 using SimCLR on fine-tuning.  
+&emsp;**self_supervised**:     stores checkpoints for different model on self-supervised learning.  
+&emsp;&emsp;**lbp_resnet101**: stores state of resnet-101 using TCL.   
+&emsp;&emsp;**resnet101**:     stores state of resnet-101 using SimCLR.  
+&emsp;&emsp;**resnet50**:      stores state of resnet-50 using SimCLR.  
+&emsp;**supervised**:          stores checkpoints for different model on training from scratch.  
+&emsp;&emsp;**resnet101**:     stores state of resnet-101 training from scratch.   
+&emsp;&emsp;**resnet50**:      stores state of resnet-50 training from scratch.  
+&emsp;&emsp;**vgg19**:         stores state of vgg19 training from scratch.  
 data_folder  
 dataset  
 figures  
