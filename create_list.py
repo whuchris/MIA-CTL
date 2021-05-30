@@ -15,6 +15,9 @@ def generate_datatxt(data_dir = r"./dataset/"):
         break
     with open(r"./data_folder/data.txt",'w') as f:
         for file in png_files:
+            # modify the following code if neccesary
+            # Our origin dataset file format are like:
+            # ./dataset/0_info1_info2_patientname_info3.png
             label = file.split('/')[-1].split('_')[0]
             name = file.split('_')[3]
             f.write(file+'\t'+label+'\t'+name+'\n')
