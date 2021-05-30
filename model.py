@@ -2,7 +2,7 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch
 import os
-#__all__ = ['ResNet50', 'ResNet101','ResNet152']
+__all__ = ['ResNet50', 'ResNet101','ResNet152', 'VGG19']
 
 def Conv1(in_planes, places, stride=2):
     return nn.Sequential(
@@ -129,3 +129,58 @@ def ResNet101(init = True, pre_train=True,feature_dim=128):
 
 def ResNet152(init = True, pre_train=True,feature_dim=128):
     return ResNet([3, 8, 36, 3], init = init, pre_train=pre_train,feature_dim=feature_dim)
+
+vgg_config = {
+    'VGG11': [64, 'P', 128, 'P', 256, 256, 'P', 512, 512, 'P', 512, 512, 'P'],
+    'VGG13': [64, 64, 'P', 128, 128, 'P', 256, 256, 'P', 512, 512, 'P', 512, 512, 'P'],
+    'VGG16': [64, 64, 'P', 128, 128, 'P', 256, 256, 256, 'P', 512, 512, 512, 'P', 512, 512, 512, 'P'],
+    'VGG19': [64, 64, 'P', 128, 128, 'P', 256, 256, 256, 125, 'P', 512, 512, 512, 512, 'P', 512, 512, 512, 512, 'P']
+}
+
+class VGG(nn.Module):
+    def __init__(self,vgg_config = vgg_config, model='VGG19',init = True,class_num=5):
+        super(VGG, self).__init__()
+        self.config = vgg_config
+        self.skeleton = self.make_layers(config=model,init_channel=3)
+        self.avgpool = nn.AvgPool2d(kernel_size=7,stride=1)
+        self.classifier = nn.Linear(512,class_num,bias=False)
+        self.init = init
+        if self.init:
+            for m in self.modules():
+                if isinstance(m, nn.Conv2d):
+                    nn.init.kaiming_normal_(m.weight, mode='fan_out', nonlinearity='relu')
+                elif isinstance(m, nn.BatchNorm2d):
+                    nn.init.constant_(m.weight, 1)
+                    nn.init.constant_(m.bias, 0)
+
+    def forward(self, x):
+        x = self.skeleton(x)
+        x = self.avgpool(x)
+        feature = torch.flatten(x,start_dim=1)
+        output = self.classifier(feature)
+        return output
+
+    def make_layers(self,config, init_channel=3):
+        layers = []
+        in_channel = init_channel
+        for layer in self.config[config]:
+            if layer == 'P':
+                layers.append(nn.MaxPool2d(kernel_size=2,stride=2))
+            else:
+                layers.append(nn.Conv2d(in_channels=in_channel,out_channels=layer,kernel_size=3,padding=1))
+                layers.append(nn.BatchNorm2d(layer))
+                layers.append(nn.ReLU(inplace=True))
+                in_channel = layer
+        return nn.Sequential(*layers)
+
+def VGG11(init = True, class_num = 5):
+    return VGG(model='VGG11',init=init,class_num=class_num)
+
+def VGG13(init = True, class_num = 5):
+    return VGG(model='VGG13',init=init,class_num=class_num)
+
+def VGG16(init = True, class_num = 5):
+    return VGG(model='VGG16',init=init,class_num=class_num)
+
+def VGG19(init = True, class_num = 5):
+    return VGG(model='VGG19',init=init,class_num=class_num)
