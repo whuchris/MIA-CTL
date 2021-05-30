@@ -34,7 +34,7 @@ The `train.py` file defines all parameters and mode for each experiment.
 * Run supervised learning based on ResNet50 by:  
 `python train.py --model_name 'resnet50' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`
 * Run supervised learning based on VGG19 by:  
-`python train.py --model_name 'VGG19' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`
+`python train.py --model_name 'vgg19' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`
 * Fine-tune ResNet101 with TCL by:  
 `python train.py --model_name 'lbp_resnet101' --epoch 40 --train_mode 'fine_tune' --use_lbp --lr 5e-3 --pre_load`
 * Fine-tune ResNet101 with SimCLR by:  
