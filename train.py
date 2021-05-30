@@ -83,6 +83,9 @@ def worker(args,folder_num=0):
         elif model_name == 'resnet50':
             net = model.ResNet50(init=init,pre_train=pre_train,feature_dim=feature_dim)
         optimizer = Adam(net.parameters(), lr=lr, weight_decay=weigth_decay)
+    elif train_mode == 'supervised' and model_name == 'vgg19':
+        net = model.VGG19(init=True,class_num=5)
+        optimizer = SGD(net.parameters(), lr=lr,momentum=0.9,weight_decay=weigth_decay)
     else:
         net = model.Linear(model_name=model_name,num_class=num_class,init=init,
                            pre_train=pre_train,pre_load=pre_load,pretrained_path=load_path)
@@ -410,7 +413,7 @@ if __name__ == '__main__':
     arg_setting = argparse.ArgumentParser()
 
     #model configuration
-    arg_setting.add_argument('--model_name',default=r"resnet101",help="model name",type=str)
+    arg_setting.add_argument('--model_name',default=r"vgg",help="model name",type=str)
     arg_setting.add_argument('--feature_dim',default=128,help="size of feature",type=str)
     arg_setting.add_argument('--num_class',default=5,help="class num",type=str)
 
