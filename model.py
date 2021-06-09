@@ -62,7 +62,7 @@ class ResNet(nn.Module):
         self.avgpool = nn.AvgPool2d(7, stride=1)
 
         #MLP layers
-        self.g = nn.Sequential(nn.Linear(2048, 512, bias=False), nn.BatchNorm1d(512),
+        self.g = nn.Sequential(nn.Linearbi(2048, 512, bias=False), nn.BatchNorm1d(512),
                                nn.ReLU(inplace=True), nn.Linear(512, feature_dim, bias=True))
         if self.init == True:
             for m in self.modules():
