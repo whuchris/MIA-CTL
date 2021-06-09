@@ -10,7 +10,8 @@ Our results are shown in the table below. This table mainly demonstrates accurac
 <img src="https://github.com/whuchris/MIA-TCL/blob/main/figures/Result.pdf" width="800"/><br/>
 Compared to four human experts, the performance of our model is better. And the picture below displays the confusion matrices for both the five-classes and binary classification task.  
 <img src="https://github.com/whuchris/MIA-TCL/blob/main/figures/Figure_4%20cfu_human%26net.pdf" width="800"/><br/>
-Our paper gives more information about the performance of our proposed method. We give a result for an external validation samples which denotes that great generalization of our model. And we also give a visualization result of our model which denotes a better interpretability of our model.  
+Our paper gives more information about the performance of our proposed method. We give a result for an external validation samples which denotes that great generalization of our model. And we also give a visualization result of our model which denotes a better interpretability of our model. See the figure below for an example.  
+<img src="https://github.com/whuchris/MIA-TCL/blob/main/figures/Figure_6%20Cross_shape.pdf" width="800"/><br/>
 ## Data preperation
 By default. The `./dataset` directory stores our dataset. But we are sorry that our dataset cannot be made public due to the confidentiality agreement. You can get more information about our dataset by reading [`this paper`](https://www.medrxiv.org/content/10.1101/2020.05.12.20098830v1.full.pdf).  
 Stll, you can make your own dataset if possible through the following steps.  
