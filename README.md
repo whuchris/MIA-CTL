@@ -6,8 +6,14 @@ We proposed a novel self-supervised learning using TCL for cervical OCT image cl
 The picture below demonstrates an overview of the proposed TCL framwork. The pretext task part uses texture contrast learning to extract feature maps from the texture features of the input images, and the downstream part linear classification is used to fine-tune the network Conv network.  
 <img src="https://github.com/whuchris/MIA-TCL/blob/main/figures/Figure_2%20Framework.pdf" width="800"/><br/>
 ## Experiment Results
-Our training step results are shown in the picture below. This pictures mainly demonstrates both the efficiency and accuracy of our proposed method.  
-<img src="https://github.com/ChrisNieo/MIA-TCL/blob/main/figures/Figure_4%20acc_curve.png" width="600"/><br/> 
+Our results are shown in the table below. This table mainly demonstrates accuracy,recall (sensitivity), specificity and AUC of our proposed method and the baselines, also provided in our paper.  
+VGG19[17]	Random	81.115.96	88.022.70	86.616.30	88.265.71	0.93080.0122
+ResNet-50[18]	Random	78.614.91	87.072.17	86.345.36	87.243.81	0.92310.0120
+ResNet-101[18]	Random	82.395.11	91.352.84	90.435.55	91.383.64	0.96820.0196
+ResNet-50[18]	SimCLR [17]	83.864.43	91.712.71	89.785.83	93.032.68	0.97230.0161
+ResNet101[18]	SimCLR [17]	82.283.39	91.392.37	92.654.67	89.254.24	0.97580.0183
+ResNet101[18]	TCL	85.385.51	92.661.45	91.174.99	93.964.72	0.97980.0157
+![image](https://user-images.githubusercontent.com/41311213/121297394-d6855500-c924-11eb-96da-ae6b27bb14ed.png)
 Compared to four human experts, the performance of our model is better. And the picture below displays the confusion matrices for both the five-classes and binary classification task.  
 <img src="https://github.com/whuchris/MIA-TCL/blob/main/figures/Figure_4%20cfu_human%26net.pdf" width="800"/><br/>
 Our paper gives more information about the performance of our proposed method. We give a result for an external validation samples which denotes that great generalization of our model. And we also give a visualization result of our model which denotes a better interpretability of our model.  
