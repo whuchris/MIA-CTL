@@ -33,7 +33,7 @@ The `train.py` file defines all parameters and mode for each experiment.
 * Run supervised learning based on EfficientNet-B7 by:  
 `python train.py --model_name 'efficientb7' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`
 * Run supervised learning based on ResNet101 by:  
-`python train.py --model_name 'resnet101' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init  
+`python train.py --model_name 'resnet101' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`  
 * Run supervised learning based on ResNet50 by:  
 `python train.py --model_name 'resnet50' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`
 * Run supervised learning based on VGG19 by:  
