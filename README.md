@@ -60,7 +60,7 @@ The `train.py` file defines all parameters and mode for each experiment.
 &emsp;&emsp;***resnet101***: `stores state of resnet-101 training from scratch.`  
 &emsp;&emsp;***resnet50***: `stores state of resnet-50 training from scratch.`  
 &emsp;&emsp;***vgg19***: `stores state of vgg19 training from scratch.`  
-&emsp;&emsp;***efficientb7***: `stores state of efficientb7 pretrained on ImageNet.`
+&emsp;&emsp;***efficientb7***: `stores state of efficientb7 pretrained on ImageNet.`  
 ***data_folder***: `contains the training, test, and validation "data.txt" for traning, test and validation.`  
 ***dataset***: `contains the whole dataset samples.`  
 ***figures***: `stores all figures displayed in our paper.`  
@@ -72,4 +72,4 @@ The `train.py` file defines all parameters and mode for each experiment.
 ***util.py***:  `uitlization function and class such as ImageProcessor.`  
 ***requirements.txt***:  `record all dependencies and versions.` 
 ## Contact us
-If you have any issues, contact us at email address kaiyi@whu.edu.cn or leave a message under [`Issues`](https://github.com/ChrisYiyi/MIA-TCL/issues) module!
+If you have any issues, contact us at email address chris@whu.edu.cn or leave a message under [`Issues`](https://github.com/ChrisYiyi/MIA-TCL/issues) module!
