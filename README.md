@@ -59,7 +59,7 @@ The `train.py` file defines all parameters and mode for each experiment.
 &emsp;***supervised***: `stores checkpoints for different model on training from scratch.`  
 &emsp;&emsp;***resnet101***: `stores state of resnet-101 training from scratch.`  
 &emsp;&emsp;***resnet50***: `stores state of resnet-50 training from scratch.`  
-&emsp;&emsp;***vgg19***: `stores state of vgg19 training from scratch.`
+&emsp;&emsp;***vgg19***: `stores state of vgg19 training from scratch.`  
 &emsp;&emsp;***efficientb7***: `stores state of efficientb7 pretrained on ImageNet.`
 ***data_folder***: `contains the training, test, and validation "data.txt" for traning, test and validation.`  
 ***dataset***: `contains the whole dataset samples.`  
