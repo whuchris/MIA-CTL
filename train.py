@@ -47,7 +47,7 @@ def worker(args,folder_num=0):
     load_path = args.pre_train_path
 
     #assert:
-    assert model_name in ['resnet101','resnet50','vgg19','lbp_resnet101'] ,"invalid model_name %s"%(model_name)
+    assert model_name in ['resnet101','resnet50','vgg19','lbp_resnet101','efficientb7'] ,"invalid model_name %s"%(model_name)
     assert train_mode in ['self_supervised','supervised','fine_tune'] ,"invalid train_mode %s"%(train_mode)
     if resume:  resume_file = os.path.join("checkpoint",train_mode,model_name,resume_file_name)
 
@@ -85,6 +85,9 @@ def worker(args,folder_num=0):
         optimizer = Adam(net.parameters(), lr=lr, weight_decay=weigth_decay)
     elif train_mode == 'supervised' and model_name == 'vgg19':
         net = model.VGG19(init=True,class_num=5)
+        optimizer = SGD(net.parameters(), lr=lr,momentum=0.9,weight_decay=weigth_decay)
+    elif train_mode == 'supervised' and model_name == 'efficientb7':
+        net = model.EfficientB7()
         optimizer = SGD(net.parameters(), lr=lr,momentum=0.9,weight_decay=weigth_decay)
     else:
         net = model.Linear(model_name=model_name,num_class=num_class,init=init,
@@ -413,7 +416,7 @@ if __name__ == '__main__':
     arg_setting = argparse.ArgumentParser()
 
     #model configuration
-    arg_setting.add_argument('--model_name',default=r"vgg",help="model name",type=str)
+    arg_setting.add_argument('--model_name',default=r"efficientb7",help="model name",type=str)
     arg_setting.add_argument('--feature_dim',default=128,help="size of feature",type=str)
     arg_setting.add_argument('--num_class',default=5,help="class num",type=str)
 
@@ -422,7 +425,7 @@ if __name__ == '__main__':
     arg_setting.add_argument('--start_epoch',default=0,help="start epoch(use for resume)",type=int)
     arg_setting.add_argument('--batch_size',default=2,help="tranning batch size",type=int)
     arg_setting.add_argument('--num_workers',default=0,help="data loader thread",type=int)
-    arg_setting.add_argument('--train_mode',default="self_supervised",help="training mode",type=str)
+    arg_setting.add_argument('--train_mode',default="supervised",help="training mode",type=str)
     arg_setting.add_argument('--temperature', default=0.5, type=float, help='Temperature used in constrasive loss')
     arg_setting.add_argument('--not_shuffle',action='store_true',help='if shuffle the dataset')
     arg_setting.add_argument('--not_use_gpu',action='store_true',help='if use GPU to train')
