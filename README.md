@@ -17,7 +17,7 @@ By default. The `./dataset` directory stores our dataset. But we are sorry that 
 Stll, you can make your own dataset if possible through the following steps.  
 * Put all you dataset samples in directory `./dataset`. Keep sure that ***the label and patient name(if exists) are able to be obtained from the sample file name.***
 * Execute method *generate_datatxt()* from `create_list.py` to generate a `data.txt` file in `./data_folder` directory. Modify the code in `create_list.py` if necessary. Keep sure that each line in `data.txt` is like '**[file_directory&emsp;label&emsp;patient_name(if exists)]**', where the spaces represent tabs('\t') with a newline('\n') in the end.  
-*Example*:  `./dataset/0_M0003_2019_P0000004_circle_2.0x2.0_C06_S006_5.png  0 P0000004`.  
+*Example*:  `./dataset/0_P1.png  0 P1`.  
 * Find the best P and R for your own dataset when execute method *local_binary_pattern()(LBP)* if you want to use TCL to boost model performance.  
 * Execute method *split_ssl_and_sl()* from `create_list.py` to generate a `self_supervised_list_folder.txt` file for self-supervised training and a `supervised_folder.txt` file for 10-fold cross validation experiment. Execute method *generate_folder()* from `create_list.py` to generate `10_folder.txt` files for fine-tuning or training from scratch.
 ## Module envirment
