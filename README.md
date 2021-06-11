@@ -30,8 +30,10 @@ The `train.py` file defines all parameters and mode for each experiment.
 `python train.py --model_name 'resnet101' --epoch 150 --train_mode 'self_supervised' --lr 1e-2 --weight_decay 1e-6 --init --pre_train`
 * Run self-supervised learning based on ResNet50 with SimCLR by:  
 `python train.py --model_name 'resnet50' --epoch 150 --train_mode 'self_supervised' --lr 1e-2 --weight_decay 1e-6 --init --pre_train`
+* Run supervised learning based on EfficientNet-B7 by:  
+`python train.py --model_name 'efficientb7' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`
 * Run supervised learning based on ResNet101 by:  
-`python train.py --model_name 'resnet101' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`
+`python train.py --model_name 'resnet101' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init  
 * Run supervised learning based on ResNet50 by:  
 `python train.py --model_name 'resnet50' --epoch 40 --train_mode 'supervised' --lr 5e-3 --init`
 * Run supervised learning based on VGG19 by:  
@@ -57,7 +59,8 @@ The `train.py` file defines all parameters and mode for each experiment.
 &emsp;***supervised***: `stores checkpoints for different model on training from scratch.`  
 &emsp;&emsp;***resnet101***: `stores state of resnet-101 training from scratch.`  
 &emsp;&emsp;***resnet50***: `stores state of resnet-50 training from scratch.`  
-&emsp;&emsp;***vgg19***: `stores state of vgg19 training from scratch.`   
+&emsp;&emsp;***vgg19***: `stores state of vgg19 training from scratch.`
+&emsp;&emsp;***efficientb7***: `stores state of efficientb7 pretrained on ImageNet.`
 ***data_folder***: `contains the training, test, and validation "data.txt" for traning, test and validation.`  
 ***dataset***: `contains the whole dataset samples.`  
 ***figures***: `stores all figures displayed in our paper.`  
