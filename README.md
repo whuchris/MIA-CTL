@@ -4,7 +4,7 @@ This repository contains all our materials except the whole dataset of our paper
 ## Overview
 We proposed a novel self-supervised learning using CTL for cervical OCT image classification. we use CNNs which can be implemented by various architectures, such as VGG, standard ResNet family, etc.  
 The picture below demonstrates an overview of the proposed CTL framwork. The pretext task part uses texture contrast learning to extract feature maps from the texture features of the input images, and the downstream part linear classification is used to fine-tune the network Conv network.  
-<img src="https://github.com/whuchris/MIA-CTL/blob/main/figures/Figure_2%20Framework.png" width="800"/><br/>
+<img src="https://github.com/whuchris/MIA-CTL/blob/main/figures/Figure_1%20Framework.png" width="800"/><br/>
 ## Experiment Results
 Our results are shown in the table below. This table mainly demonstrates accuracy,recall (sensitivity), specificity and AUC of our proposed method and the baselines, also provided in our paper.  
 <img src="https://github.com/whuchris/MIA-CTL/blob/main/figures/Result.png" width="800"/><br/>
