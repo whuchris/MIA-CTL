@@ -72,4 +72,4 @@ The `train.py` file defines all parameters and mode for each experiment.
 ***util.py***:  `uitlization function and class such as ImageProcessor.`  
 ***requirements.txt***:  `record all dependencies and versions.` 
 ## Contact us
-If you have any issues, contact us at email address chris@whu.edu.cn or leave a message under [`Issues`](https://github.com/ChrisYiyi/MIA-CTL/issues) module!
+If you have any issues, contact us at email address chris@whu.edu.cn or leave a message under [`Issues`](https://github.com/whuchris/MIA-CTL/issues) module!
