@@ -53,8 +53,8 @@ class ImageProcessor(object):
     def __normalization(self,imgData):
         imgData = np.transpose(imgData,(2,0,1))
         imgData[0] = preprocessing.scale(imgData[0])
-        imgData[2] = preprocessing.scale(imgData[1])
-        imgData[1] = preprocessing.scale(imgData[2])
+        imgData[1] = preprocessing.scale(imgData[1])
+        imgData[2] = preprocessing.scale(imgData[2])
         imgData = np.transpose(imgData,(1,2,0))
         return imgData
 
@@ -85,10 +85,12 @@ class ImageProcessor(object):
         imgData = None
         if self.use_lbp:
             img = feature.local_binary_pattern(img,P=24,R=3,method='ror').astype(float)
-            imgData = transform.resize(img,(224,224,3),order=1,mode='constant',anti_aliasing=False,anti_aliasing_sigma=False)
+            imgData = transform.resize(img,(224,224,3),order=1,mode='constant',cval=0,clip=True,
+                                       preserve_range=False,anti_aliasing=False,anti_aliasing_sigma=None)
             imgData = self._normalize_lbp(imgData)
         if self.normalization and not self.use_lbp:
-            imgData = transform.resize(img,(224,224,3),order=1,mode='constant',anti_aliasing=False,anti_aliasing_sigma=False)
+            imgData = transform.resize(img,(224,224,3),order=1,mode='constant',cval=0,clip=True,
+                                       preserve_range=False,anti_aliasing=False,anti_aliasing_sigma=None)
             imgData = self.__normalization(imgData)
         pos_1 = imgData.copy()
         pos_2 = imgData.copy()
