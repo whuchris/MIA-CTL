@@ -52,9 +52,9 @@ class ImageProcessor(object):
 
     def __normalization(self,imgData):
         imgData = np.transpose(imgData,(2,0,1))
-        imgData[0] = preprocessing.scale(imgData[1])
+        imgData[0] = preprocessing.scale(imgData[0])
         imgData[2] = preprocessing.scale(imgData[1])
-        imgData[1] = preprocessing.scale(imgData[1])
+        imgData[1] = preprocessing.scale(imgData[2])
         imgData = np.transpose(imgData,(1,2,0))
         return imgData
 
@@ -75,9 +75,9 @@ class ImageProcessor(object):
 
     def _normalize_lbp(self,imgData):
         imgData = np.transpose(imgData,(2,0,1))
-        imgData[0] = imgData[1] / (imgData[1].max()-imgData[1].min())
-        imgData[2] = imgData[1] / (imgData[1].max()-imgData[1].min())
+        imgData[0] = imgData[0] / (imgData[0].max()-imgData[0].min())
         imgData[1] = imgData[1] / (imgData[1].max()-imgData[1].min())
+        imgData[2] = imgData[2] / (imgData[2].max()-imgData[2].min())
         imgData = np.transpose(imgData,(1,2,0))
         return imgData
 
@@ -85,16 +85,16 @@ class ImageProcessor(object):
         imgData = None
         if self.use_lbp:
             img = feature.local_binary_pattern(img,P=24,R=3,method='ror').astype(float)
-            imgData = transform.resize(img,(224,224,3),mode='constant',anti_aliasing=False)
+            imgData = transform.resize(img,(224,224,3),order=1,mode='constant',anti_aliasing=False,anti_aliasing_sigma=False)
             imgData = self._normalize_lbp(imgData)
         if self.normalization and not self.use_lbp:
-            imgData = transform.resize(img,(224,224,3),mode='constant',anti_aliasing=False)
+            imgData = transform.resize(img,(224,224,3),order=1,mode='constant',anti_aliasing=False,anti_aliasing_sigma=False)
             imgData = self.__normalization(imgData)
         pos_1 = imgData.copy()
         pos_2 = imgData.copy()
         if self.augmentation:
-            pos_1 = self.__augmentation(imgData)
-            pos_2 = self.__augmentation(imgData)
+            pos_1 = self.__augmentation(pos_1)
+            pos_2 = self.__augmentation(pos_2)
         pos_1 = np.transpose(pos_1,(2,0,1))
         pos_2 = np.transpose(pos_2,(2,0,1))
         return pos_1,pos_2
