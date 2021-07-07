@@ -423,7 +423,7 @@ if __name__ == '__main__':
     #trianing configuration
     arg_setting.add_argument('--epoch',default=150,help="trainning epoch",type=int)
     arg_setting.add_argument('--start_epoch',default=0,help="start epoch(use for resume)",type=int)
-    arg_setting.add_argument('--batch_size',default=2,help="tranning batch size",type=int)
+    arg_setting.add_argument('--batch_size',default=32,help="tranning batch size",type=int)
     arg_setting.add_argument('--num_workers',default=0,help="data loader thread",type=int)
     arg_setting.add_argument('--train_mode',default="supervised",help="training mode",type=str)
     arg_setting.add_argument('--temperature', default=0.5, type=float, help='Temperature used in constrasive loss')
