@@ -72,6 +72,8 @@ The `train.py` file defines all parameters and mode for each experiment.
 ***util.py***:  `uitlization function and class such as ImageProcessor.`  
 ***requirements.txt***:  `record all dependencies and versions.` 
 ## Citation
-The detailed report of this work has been published on arXiv which can be accessed through [this link](https://arxiv.org/abs/2108.05081).
+The detailed report of this work has been published on arXiv.  
+
+Kaiyi Chen, Qingbin Wang, and Yutao Ma. [Cervical Optical Coherence Tomography Image Classification Based on Contrastive Self-Supervised Texture Learning](https://arxiv.org/abs/2108.05081). arXiv, 2108.05081, 2021.
 ## Contact us
 If you have any issues, contact us at email address chris@whu.edu.cn or leave a message under [`Issues`](https://github.com/whuchris/MIA-CTL/issues) module!
