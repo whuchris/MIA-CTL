@@ -1,5 +1,5 @@
 # MIA-CTL
-This repository contains all our materials except the whole dataset of our paper. Note that the .gitkeep file is **only for** keeping the integrity of our directory structure.
+This repository contains all our materials except the whole dataset of our paper. Note that the .gitkeep file is **only for** keeping the integrity of our directory structure. 
 
 ## Overview
 We proposed a novel self-supervised learning using CTL for cervical OCT image classification. we use CNNs which can be implemented by various architectures, such as VGG, standard ResNet family, etc.  
@@ -71,5 +71,7 @@ The `train.py` file defines all parameters and mode for each experiment.
 ***train.py***: `training step.`  
 ***util.py***:  `uitlization function and class such as ImageProcessor.`  
 ***requirements.txt***:  `record all dependencies and versions.` 
+## Citation
+The detailed report of this work has been published on arXiv which can be accessed through [this link](https://arxiv.org/abs/2108.05081).
 ## Contact us
 If you have any issues, contact us at email address chris@whu.edu.cn or leave a message under [`Issues`](https://github.com/whuchris/MIA-CTL/issues) module!
